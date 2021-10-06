@@ -16,7 +16,7 @@ int nonRep(string str){
 	return -1;
 }
 int main(){
-	string str="geeksforgeeks";
+	string str="malayalam";
 	int ans=nonRep(str);
 	cout<<"First non repeating character is "<<str[ans];
 	return 0;
