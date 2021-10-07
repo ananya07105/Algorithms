@@ -1,0 +1,36 @@
+#include<iostream>
+#include<string.h>
+using namespace std;
+void reverse(string &str,int low,int high)
+{
+	while(low<high)
+	{
+		swap(str[low],str[high]);
+		low++;
+		high--;
+	}
+}
+string reverseWords(string str,int n)
+{
+	str.insert(str.end(),' ');
+	int start=0;
+	for(int end=0;end<n;end++)
+	{
+		if(str[end]==' ')
+		{
+			reverse(str,start,end-1);
+			start=end+1;
+		}
+	}
+	reverse(str,start,n-1);
+	reverse(str,0,n-1);
+	return str;
+}
+
+int main(){
+	string str="I love coding";
+	string rev=reverseWords(str,str.length());
+	cout<<rev;
+	return 0;
+	
+}
