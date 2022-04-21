@@ -1,6 +1,7 @@
 stack<int> s;
 stack<int> mn;
-MinStack::MinStack() {
+MinStack::MinStack() 
+{
     while(!s.empty()) s.pop();
     while(!mn.empty()) mn.pop();
 }
@@ -11,14 +12,16 @@ void MinStack::push(int x) {
       mn.push(x);
 }
 
-void MinStack::pop() {
+void MinStack::pop() 
+{
     if(s.empty()) return;
     if(mn.top()=s.top()) mn.pop();
     s.pop();
  
 }
 
-int MinStack::top() {
+int MinStack::top() 
+{
     if(s.empty()) return -1;
     return s.top();
 }
